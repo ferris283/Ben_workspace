@@ -1,0 +1,228 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	background-color: #FFFDF7;
+	font-family: 'Libre Franklin';
+    
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto';
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: sticky;
+	top: 0;
+	z-index: 1000;
+    border: 0.6px solid #e1f1ff;
+    padding: 1rem 2rem;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+}
+
+ul li {
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+nav a{
+    text-decoration: none;
+    margin-right: 2rem;
+    color: #001011;
+    font-weight: 600;
+}
+ul li:hover{
+    color: rgb(117, 117, 231);
+    text-decoration: 1px underline solid black;
+}
+.div1{
+    background-color: #ebfae7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+   margin-top: 1rem;
+   gap: 2rem; 
+   flex-wrap: wrap; 
+ 
+}
+.text-content{
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+div h1{
+    font-family: 'Outfit';
+    font-weight: 600;
+    font-size: 2rem;
+}
+.text-content p{
+    font-weight: 300;
+}
+.text-content a{
+    text-decoration: none;
+    color: wheat;
+    background-color: #303083;
+    padding: 1rem 1rem;
+    width: 100px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition:background-color 0.3 ease,
+    transform 0.2 ease,
+    box-shadow 0.3s ease;
+}
+.text-content a:hover{
+    background-color: #03012C;
+    color: #EEF5DB;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.image-content{
+    display: flex;
+    flex: 1 1 40%;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+.image-content img{
+    height: auto;
+    width: 400px;
+}
+h2,h3{
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+.Popular{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+   margin-top: 1rem;
+   gap: 2rem; 
+   flex-wrap: wrap; 
+}
+.popular-item{
+    display: flex;
+    flex: 1 1 30%;
+    height: auto;
+    width: 200px;
+    flex-direction: column;
+}
+.popular-item img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+.popular-item p{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.Popular1{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+   margin-top: 1rem;
+   gap: 2rem; 
+   flex-wrap: wrap; 
+   background-color: #FAF9F9;
+}
+.popular-item2{
+    display: flex;
+    flex: 1 1 30%;
+    height: auto;
+    width: 200px;
+    flex-direction: column;
+}
+.popular-item2 img{
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    display: block;
+}
+.popular-item2 p{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+.popular-item p:hover, .popular-item2 p:hover{
+    text-decoration: underline 1px #2E294E;
+    color: #DEF2C8;
+}
