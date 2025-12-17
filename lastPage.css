@@ -1,5 +1,9 @@
-/* --- Reset --- */
-* {
+/* 
+   RESET & BASE
+*/
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,29 +14,38 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #0e0e0e;
-  color: #fff;
-  line-height: 1.6;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: radial-gradient(circle at top, #111827, #0e0e0e 65%);
+  color: #f1f5f9;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* --- Header --- */
+/* 
+   HEADER
+ */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 4%;
-  background: rgba(0,0,0,0.85);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.1rem 4%;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .logo {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f8fafc;
 }
 
 nav ul {
@@ -42,93 +55,160 @@ nav ul {
 }
 
 nav a {
-  color: #ddd;
+  color: #cbd5f5;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #83BCA9, #38bdf8);
+  transition: width 0.25s ease;
 }
 
 nav a:hover,
 nav a.active {
-  color: #83BCA9;
+  color: #ffffff;
 }
 
-/* --- Main Content --- */
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/*    MAIN
+ */
 main {
-  padding-top: 6rem; /* space for fixed header */
+  padding-top: 6.5rem; /* space for fixed header */
 }
 
+/* 
+   PROJECT CARD
+ */
 .project {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 3rem 4%;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
+  gap: 2.2rem;
+
+  margin: 3.5rem 4%;
+  background:
+    linear-gradient(
+      to bottom right,
+      rgba(15, 23, 42, 0.85),
+      rgba(2, 6, 23, 0.9)
+    );
+
+  border-radius: 14px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  border: 1px solid rgba(148,163,184,0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(131,188,169,0.4);
+  transform: translateY(-6px);
+  border-color: rgba(131,188,169,0.6);
+  box-shadow:
+    0 20px 50px rgba(2,6,23,0.85),
+    0 0 0 1px rgba(131,188,169,0.15);
 }
 
+/* 
+   PROJECT IMAGE
+ */
 .project img {
-  width: 300px;
+  width: 320px;
   max-width: 100%;
   object-fit: cover;
+  filter: saturate(1.05) contrast(1.05);
 }
 
+/* 
+   PROJECT INFO
+ */
 .project-info {
   flex: 1;
-  padding: 1.5rem;
+  padding: 2rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .project-info h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
   color: #83BCA9;
+  letter-spacing: -0.01em;
 }
 
 .project-info p {
-  color: #ccc;
-  margin-bottom: 1rem;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+  margin-bottom: 1.4rem;
+  line-height: 1.65;
 }
 
+/* 
+   BUTTON
+ */
 .btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: #83BCA9;
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.55rem 1.4rem;
+  background: linear-gradient(135deg, #83BCA9, #38bdf8);
   color: #02111B;
+
   text-decoration: none;
-  border-radius: 5px;
   font-weight: 500;
-  transition: 0.3s;
+  border-radius: 999px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .btn:hover {
-  background: #6aa18b;
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #6aa18b, #0ea5e9);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.45);
+  color: #ffffff;
 }
 
-/* --- Footer --- */
+/*    FOOTER
+ */
 footer {
   text-align: center;
-  padding: 3rem 0;
-  background: #000;
-  color: #999;
+  padding: 3rem 1rem;
+  background: #020617;
+  color: #9ca3af;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* --- Responsive --- */
+/* 
+   RESPONSIVE
+ */
 @media (max-width: 768px) {
   .project {
     flex-direction: column;
-    align-items: center;
+    margin: 2.5rem 5%;
   }
 
   .project img {
@@ -136,6 +216,10 @@ footer {
   }
 
   .project-info {
-    padding: 1rem;
+    padding: 1.6rem 1.4rem;
+  }
+
+  .project-info h2 {
+    font-size: 1.5rem;
   }
 }
