@@ -1,185 +1,198 @@
-/* CSS Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-body {
-	line-height: 1;
-	background-color: #F9F9ED;
-	font-family: 'Rubik';
-    
-}
-
-ol, ul {
-	list-style: none;
-}
-
-blockquote, q {
-	quotes: none;
-}
-
-blockquote::before, blockquote::after,
-q::before, q::after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+/* =========================
+   RESET & BASE
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	box-sizing: border-box;
-}
-.nav-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 3rem;
-  background-color: #DBF4A7;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin-top: 1rem;
-  gap: 2rem; 
-  flex-wrap: wrap; 
-  position: sticky;
+  scroll-behavior: smooth;
 }
 
-nav {
-  flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+body {
+  font-family: 'Rubik', system-ui, sans-serif;
+  background: #fffafc;
+  color: #2b2b2b;
+  line-height: 1.7;
 }
 
-nav h1 {
-  font-weight: 600;
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
-
-nav p {
-  font-size: 1.1rem;
-  font-weight: 300;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  background-color: #110B11;
-  font-weight: 700;
-  padding: 0.6rem 2rem;
-  width: fit-content;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #4B7F52;
-  color: #D0FEF5;
-}
-
-.image-content {
-  flex: 1 1 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-content img {
+/* =========================
+   MAIN WRAPPER
+========================= */
+.main-div {
   width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow-x: hidden;
 }
-.div2{
-    display: flex;
-  justify-content: space-between;
+
+/* =========================
+   HERO / NAV SECTION
+========================= */
+.nav-div {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  padding: 2rem 3rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin-top: 1rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.text-content{
-    flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-div h2{
-    font-size: 2.2rem;
-    font-weight: 600;
-    line-height: 1.2;
-    
-}
-.text-content p{
-    font-weight: 300;
-    font-size: 1.1rem;
-    
-}
-.Services-content {
-  padding: 2rem;
-  text-align: center;
-  max-height: 40%;
+  gap: 3rem;
+
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, #fff1f6, #fdf4ff);
 }
 
- h3 {
-  font-size: 2rem;
+.nav-div nav h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.nav-div nav p {
+  font-size: 1.05rem;
+  color: #6b5563;
   margin-bottom: 2rem;
-  font-weight: bold;
-  margin-left: 2rem;
-  text-align: center;
-}
-h3:hover{
-    color: #a37cd6;
 }
 
-.service{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
+.nav-div nav a {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  background: linear-gradient(135deg, #e879f9, #fb7185);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-div nav a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(232, 121, 249, 0.35);
+}
+
+.nav-div .image-content img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.div2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  padding: 5rem 5%;
+  background: #ffffff;
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.div2 .image-content img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 4rem 1rem 2rem;
+  font-weight: 700;
+}
+
+.Services-content {
+  padding: 0 5% 5rem;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
 }
 
 .service-item {
-  flex: 1 1 30%;
-  min-width: 200px;
-  text-align: left;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 1.6rem;
+  text-align: center;
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
 
-.svg img {
-  width: 60px; 
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem; 
+.service-item .svg {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #fbcfe8, #f5d0fe);
+  border-radius: 50%;
+}
+
+.service-item .svg img {
+  width: 36px;
+  height: 36px;
+}
+
+.service-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 900px) {
+  .nav-div {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .div2 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-div nav a {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-div {
+    padding: 3rem 1.5rem;
+  }
+
+  .div2 {
+    padding: 3rem 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
 }

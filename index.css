@@ -1,4 +1,4 @@
-/* ====== GLOBAL RESET ====== */
+/*  GLOBAL RESET  */
 *,
 *::before,
 *::after {
@@ -7,111 +7,107 @@
   box-sizing: border-box;
 }
 
-/* ====== BODY ====== */
-html, body {
+/* BODY  */
+html,
+body {
   min-height: 100%;
   width: 100%;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(120deg, #a8edea, #fed6e3);
-  transition: background 2.5s ease-in-out;
+  font-family: 'Poppins', system-ui, sans-serif;
+
+  display: grid;
+  place-items: center;
+
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #eef2f7, #f8fafc);
 }
 
 /* ====== PROFILE CARD ====== */
 .profile-card {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
   width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
+  max-width: 360px;
+
+  background: #ffffff;
+  padding: 2rem 1.75rem;
+  border-radius: 14px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.12);
 }
 
-/* ====== PROFILE IMAGE ====== */
+/*  PROFILE IMAGE  */
 .profile-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .profile-image img {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  border: 2px solid #e5e7eb;
 }
 
-/* ====== PROFILE INFO ====== */
+/* PROFILE INFO  */
 .profile-info h1 {
-  font-size: 1.4rem;
-  color: #222;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #111827;
   margin-bottom: 0.4rem;
 }
 
 .profile-info p {
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
 }
 
-/* ====== BUTTON ====== */
+/*  BUTTON  */
 .btn {
-  background-color: #333;
-  color: white;
+  display: inline-block;
+
+  background-color: #111827;
+  color: #ffffff;
+
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 8px;
+
+  padding: 0.6rem 1.4rem;
   font-size: 0.9rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #555;
-  transform: scale(1.05);
+  background-color: #1f2937;
+  transform: translateY(-1px);
 }
 
-/* ====== RESPONSIVE STYLING ====== */
+/*  RESPONSIVE  */
 
-/* Tablets and mobile: full-screen card */
-@media (max-width: 1024px) {
-  html, body {
-    display: block;
-    padding: 0;
-    margin: 0;
-  }
-
+/* Mobile: slightly tighter spacing */
+@media (max-width: 480px) {
   .profile-card {
-    width: 100%;
-    height: 100vh;        /* full viewport height */
-    max-width: none;
-    border-radius: 0;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertical center */
-    margin: 0;
+    padding: 1.6rem 1.4rem;
   }
 
   .profile-image img {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
   }
 
   .profile-info h1 {
@@ -120,20 +116,5 @@ html, body {
 
   .profile-info p {
     font-size: 0.88rem;
-  }
-
-  .btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
-}
-
-/* Desktop: keep smaller centered card */
-@media (min-width: 1025px) {
-  .profile-card {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    border-radius: 15px;
   }
 }
